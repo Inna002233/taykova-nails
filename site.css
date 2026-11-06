@@ -1,0 +1,55 @@
+/* Правки поверх стиля «Продающий» для Taykova nails: шрифт Alegreya, заголовок слева, фото справа в арке. */
+body { overflow-x: clip; }
+h1, h2, h3 { font-weight: 600; letter-spacing: 0; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.1; }
+.s-bar__brand { font-family: var(--f-display); font-weight: 700; font-size: 1.3rem; }
+.s-eyebrow, .s-board__title, .s-widget legend, .s-range label, .s-bubble__label { text-transform: none; letter-spacing: .01em; }
+.s-board__price, .s-find__addr { font-family: var(--f-display); font-weight: 600; }
+
+/* первый экран */
+.tk-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(28px, 5vw, 72px); align-items: center; padding: clamp(28px, 5vw, 64px) 0 clamp(12px, 3vw, 40px); }
+.tk-hero__body { display: grid; gap: 20px; justify-items: start; }
+.tk-hero .s-eyebrow { color: var(--c-accent-deep); margin: 0; font-weight: 600; }
+.tk-hero h1 { font-size: clamp(2.3rem, 4.3vw, 3.6rem); line-height: 1.05; margin: 0; text-wrap: pretty; color: var(--c-ink); }
+.tk-hero .s-lead { margin: 0; max-width: 30em; }
+.tk-hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 26px; margin-top: 6px; }
+.tk-hero .s-rating { margin: 0; }
+.tk-hero__arch { margin: 0; justify-self: end; width: min(100%, 460px); aspect-ratio: 3 / 4; border-radius: 999px 999px 28px 28px; overflow: hidden; box-shadow: 0 24px 60px -24px rgba(143, 37, 82, .45); }
+.tk-hero__arch img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+
+.s-hero--widget { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: clamp(28px, 5vw, 64px); align-items: stretch; }
+.s-hero--widget .s-hero__widget { position: static; }
+.tk-widget-intro { display: grid; grid-template-rows: auto auto minmax(0, 1fr); gap: 20px; padding-top: 8px; }
+.tk-widget-intro h2 { margin: 0; }
+.tk-widget-intro__img { margin: 8px 0 0; position: relative; min-height: 320px; border-radius: var(--r); overflow: hidden; }
+.tk-widget-intro__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.tk-widget-intro__img figcaption { position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(255, 252, 252, .92); color: var(--c-ink); font-size: .84rem; }
+
+.s-demo--sample { margin: -4px 0 14px; padding: 8px 12px; border-radius: 10px; background: color-mix(in srgb, var(--c-accent) 10%, var(--c-surface)); font-size: .82rem; line-height: 1.4; color: var(--c-ink); }
+
+.tk-works__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 20px); }
+.tk-works__grid figure { margin: 0; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 999px 999px var(--r) var(--r); }
+.tk-works__grid img { width: 100%; height: 100%; object-fit: cover; }
+.tk-works__grid figure:nth-child(even) { margin-top: clamp(12px, 3vw, 36px); }
+
+.s-find__grid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: clamp(22px, 4vw, 52px); align-items: center; }
+.s-find__grid figure { margin: 0; }
+.s-find__grid img { width: 100%; max-height: 520px; object-fit: cover; object-position: 50% 50%; border-radius: var(--r); border: 1px solid var(--hair); }
+.s-find__text { display: grid; gap: 14px; justify-items: start; }
+.s-find__addr { font-size: 1.6rem; line-height: 1.2; }
+.s-find__text p { max-width: 36em; }
+
+@media (max-width: 900px) {
+  .tk-hero { grid-template-columns: 1fr; }
+  .tk-hero__arch { justify-self: center; width: min(100%, 380px); }
+  .s-hero--widget { grid-template-columns: 1fr; }
+  .tk-widget-intro__img { display: none; }
+}
+@media (max-width: 760px) {
+  .tk-hero h1 { font-size: clamp(2.1rem, 9.5vw, 2.8rem); }
+  .tk-works__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .s-find__grid { grid-template-columns: 1fr; }
+  .s-find__grid img { max-height: 420px; }
+}
+.tk-works__lash { position: relative; }
+.tk-works__lash figcaption { position: absolute; left: 10px; bottom: 14px; padding: 5px 12px; border-radius: 999px; background: rgba(255, 252, 252, .92); color: var(--c-ink); font-size: .82rem; }
